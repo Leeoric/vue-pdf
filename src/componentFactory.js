@@ -96,7 +96,10 @@ export default function(pdfjsWrapper) {
 			});
 			
 			this.$on('page-size', function(width, height) {
-				this.pdf.setCanvasHeight(this.pdf.getCanvas().offsetWidth  * (height / width) + 'px');
+				//this.pdf.setCanvasHeight(this.pdf.getCanvas().offsetWidth  * (height / width) + 'px');
+				this.$refs.canvas.style.height = '210px'
+        			this.$refs.canvas.style.width = 210 * (width / height) + 'px'
+        			this.$refs.canvas.style.margin = '0 auto'
 			});
 			
 			this.pdf.loadDocument(this.src);
