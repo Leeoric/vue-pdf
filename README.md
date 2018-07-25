@@ -1,9 +1,10 @@
-# vue-pdf
-vue.js pdf viewer
+# vue-pdf-wind
+vue.js pdf viewer for wind version
+与原作的版本有一点小区别，是根据实际需求定制了canvas的自适应方式。
 
 ## Install
 ```
-npm install --save vue-pdf
+npm install --save vue-pdf-wind
 ```
 
 ## Example - basic
