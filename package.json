@@ -1,24 +1,24 @@
 {
-  "name": "vue-pdf",
+  "name": "vue-pdf-wind",
   "version": "3.3.1",
   "description": "vue.js pdf viewer",
   "main": "src/vuePdfNoSss.vue",
   "scripts": {},
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/FranckFreiburger/vue-pdf.git"
+    "url": "git+https://github.com/Leeoric/vue-pdf.git"
   },
   "keywords": [
     "vue.js",
     "pdf",
     "viewer"
   ],
-  "author": "Franck FREIBURGER",
+  "author": "Leeoric",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/FranckFreiburger/vue-pdf/issues"
+    "url": "https://github.com/Leeoric/vue-pdf/issues"
   },
-  "homepage": "https://github.com/FranckFreiburger/vue-pdf#readme",
+  "homepage": "https://github.com/Leeoric/vue-pdf#readme",
   "dependencies": {
     "pdfjs-dist": "^2.0.303",
     "vue-resize-sensor": "^2.0.0",
