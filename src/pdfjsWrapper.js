@@ -83,6 +83,14 @@ export default function(PDFJS) {
 			canvasElt.style.height = h
 		}
 
+		this.setCanvasWidth = function(w) {
+			canvasElt.style.width = w
+		}
+
+		this.setCanvasMargin = function(v) {
+			canvasElt.style.margin = v
+		}
+
 		this.getCanvas = function() {
 			return canvasElt;
 		}

@@ -1,6 +1,6 @@
 {
   "name": "vue-pdf-wind",
-  "version": "3.3.1",
+  "version": "3.3.5",
   "description": "vue.js pdf viewer",
   "main": "src/vuePdfNoSss.vue",
   "scripts": {},
