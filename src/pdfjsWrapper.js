@@ -220,7 +220,7 @@ export default function(PDFJS) {
 				rotate = 0;
 
 			canvasElt = canvasElt.cloneNode(true);
-			const previousCanvas = canvasParent.firstChild;
+			var previousCanvas = canvasParent.firstChild;
 			if (previousCanvas) {
 				canvasParent.replaceChild(canvasElt, previousCanvas);
 			} else {
