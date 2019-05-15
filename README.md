@@ -1,6 +1,5 @@
 # vue-pdf-wind
 vue.js pdf viewer for wind version
-与原作的版本有一点小区别，是根据实际需求定制了canvas的自适应方式。
 
 ## Install
 ```
@@ -46,6 +45,12 @@ The page number to display.
 #### :rotate <sup>Number - default: 0<sup>
 The page rotation in degrees, only multiple of 90 are valid.
 
+#### :propsWidth <sup>String - default: ''<sup>
+The page width.
+
+#### :propsHeight <sup>String - default: ''<sup>
+The page height.
+
 ### Events
 
 #### @password <sup>(updatePassword, reason)<sup>
@@ -83,6 +88,14 @@ Triggered when an internal link is clicked
   * `src`: see `:src` prop  
   This function creates a PDFJS loading task that can be used and reused as `:src` property.  
   The loading task is a promise that resolves with the PDFJS pdf document that exposes the `numPages` property (see example below).
+
+#### render
+  * `render`:  
+  You can re render the PDF in this way.
+
+#### getPDFCanvasSize
+  * `getPDFCanvasSize`: 
+  You can use this method to get the width and height of the canvas to which the pdf belongs.
 
 
 ## Examples

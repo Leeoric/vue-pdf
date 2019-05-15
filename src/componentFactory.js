@@ -45,6 +45,14 @@ export default function(pdfjsWrapper) {
 				type: Number,
 				default: 0,
 			},
+			propsWidth: {
+				type: String,
+				default: ''
+			},
+			propsHeight: {
+			 	type: String,
+			 	default: ''
+			}
 		},
 		watch: {
 			src: function() {
@@ -57,7 +65,7 @@ export default function(pdfjsWrapper) {
 			},
 			rotate: function() {
 				this.pdf.renderPage(this.rotate);
-			},
+			}
 		},
 		methods: {
 			resize: function(size) {
@@ -82,6 +90,16 @@ export default function(pdfjsWrapper) {
 			print: function(dpi, pageList) {
 
 				this.pdf.printPage(dpi, pageList);
+			},
+			render: function(rotate = 0) {
+			
+			        this.pdf.loadPage(this.page, this.rotate);
+			},
+			getPDFCanvasSize: function() {
+			 	return {
+			 	 	width: this.pdf.getCanvas().offsetWidth,
+			 	 	height: this.pdf.getCanvas().offsetHeight
+			 	}
 			}
 		},
 
@@ -96,9 +114,25 @@ export default function(pdfjsWrapper) {
 			});
 			
 			this.$on('page-size', function(width, height) {
-				//this.pdf.setCanvasHeight(this.pdf.getCanvas().offsetWidth  * (height / width) + 'px');
-				this.pdf.setCanvasHeight('210px')
-				this.pdf.setCanvasWidth('auto')
+				
+				if(this.propsWidth && !this.propsHeight) {
+					var setWidth = this.propsWidth || 'auto'
+					var setHeight = this.propsHeight || 'auto'
+					this.pdf.setCanvasWidth(setWidth)
+					this.pdf.setCanvasHeight(this.pdf.getCanvas().offsetWidth  * (height / width) + 'px');
+				} else if (!this.propsWidth && this.propsHeight) {
+					var setWidth = this.propsWidth || 'auto'
+					var setHeight = this.propsHeight || 'auto'
+					this.pdf.setCanvasWidth(setWidth)
+					this.pdf.setCanvasHeight(setHeight)
+				} else if (this.propsWidth && this.propsHeight) {
+					var setWidth = this.propsWidth || 'auto'
+					var setHeight = this.propsHeight || 'auto'
+					this.pdf.setCanvasWidth(setWidth)
+					this.pdf.setCanvasHeight(setHeight)
+				} else {
+					this.pdf.setCanvasHeight(this.pdf.getCanvas().offsetWidth  * (height / width) + 'px');
+				}
 				this.pdf.setCanvasMargin('0 auto')
 			});
 			
